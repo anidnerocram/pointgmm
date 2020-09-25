@@ -7,7 +7,22 @@ from constants import DATASET
 from custom_types import *
 import json
 
+class CustomDataset(Dataset):
+  def __len__(self):
+    return self.data.shape[0]
 
+  def __getitem__(self, idx):
+    return self.data[idx]
+
+  def __init__(self):
+    super(CustomDataset, self).__init__()
+    vettore1=np.load("/content/drive/My Drive/") #qui viene caricato il numpy riguardante il train dell'oggetto che si vuole alle allenare
+    vettore2=np.load("/content/drive/My Drive/") #qui viene caricato il numpy riguardante il test dell'oggetto che si vuole alle allenare
+    vettore=np.concatenate((vettore1,vettore2))
+    self.data = vettore
+    self.data = self.data.astype("float32")
+    
+    
 class MeshDataset(Dataset):
 
     @property
