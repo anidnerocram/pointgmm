@@ -74,7 +74,7 @@ class Options:
         self.already_saved = False
         self.to_unit = True
         self.partial_range = (1, 1)
-        self.partial_samples = (2048, 1024)
+        self.partial_samples = (1024, 1024)
         self.attentive = True
         self.fill_args(kwargs)
 
