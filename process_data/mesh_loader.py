@@ -184,7 +184,8 @@ class AnotherLoaderWrap:
 
 
 def get_loader(opt: options.Options, train=True) -> DataLoader:
-    dataset = MeshDataset(opt, 20)
+    #dataset = MeshDataset(opt, 20)
+    dataset= CustomDataset()
     ds_length = len(dataset)
     if 'vae' not in opt.task:
         splits_file = f'{DATASET}/{opt.tag}/{opt.tag}_split'
